@@ -3,6 +3,7 @@ from flask import Flask,request,render_template,url_for,jsonify
 #classifier2 = TARSClassifier.load('tars-base')
 #from flair.data import Sentence
 from googletrans import Translator
+from textblob import TextBlob
 import pickle
 clf=pickle.load(open('nlp_model1.pkl','rb'))
 cv=pickle.load(open('transform1.pkl','rb'))
@@ -50,7 +51,10 @@ def predict():
     if request.method=='POST':
         message=request.form['message']
         fr=f(message)
-        data=[fr]
+        fr=fr.split()
+        a=[str(TextBlob(word).correct()) for word in fr]
+        p=(' '.join(a))
+        data=[p]
         #vect=cv.transform(data).toarray()
         vect=cv.transform(data)
         #vect=vect.astype('float32')
