@@ -2,6 +2,7 @@ from flask import Flask,request,render_template,url_for
 #from flair.models import TARSClassifier
 #classifier2 = TARSClassifier.load('tars-base')
 #from flair.data import Sentence
+#testing
 from googletrans import Translator
 import pickle
 clf=pickle.load(open('nlp_model1.pkl','rb'))
