@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+
+   
+  </head>
+  <br>
+    <header>
+      <div class="container">
+        <h1><strong>TESTING</strong></h1>
+        <!-- <div id="brandname">
+          
+        </div> -->
+      </div>
+    </header>
+  </br>
+  NOTE: This model is not fully trained and functional.This is a test version
+</br>
+
+    <div class="ml-container">
+      <form action="{{ url_for('predict')}}" method="POST">
+        <textarea
+          name="message"
+          rows="10"
+          cols="105"
+          placeholder="User's untemplated data here....."
+        ></textarea>
+        <br />
+
+       <input type="submit" class="btn-info" value="Predict" />
+      </form>
+    </div>
+    <br>
+    <br>
+   {{pre}}
+  </body>
+</html>
